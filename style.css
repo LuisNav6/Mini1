@@ -1,0 +1,70 @@
+body {
+	font-family: Arial, sans-serif;
+	margin: 0;
+	padding: 0;
+}
+
+h1{
+    padding: 20px 10px;
+    margin-top: 0;
+}
+
+#start-screen, #game-screen, #congrats-screen {
+	text-align: center;
+    display: block;
+}
+
+#game-screen, #congrats-screen{
+    display: none;
+}
+
+#start-screen {
+	height: 100vh;
+	background-color: #009688;
+	color: white;
+}
+
+#start-button, #end-button, #restart-button {
+	font-size: 1.5rem;
+	padding: 1rem;
+	margin-top: 2rem;
+	background-color: #4CAF50;
+	border: none;
+	border-radius: 5px;
+	color: white;
+	cursor: pointer;
+}
+
+#start-button:hover, #end-button:hover, #restart-button:hover {
+	background-color: #3e8e41;
+}
+
+#game-screen {
+	height: 100vh;
+	background-color: #00bcd4;
+	color: white;
+}
+
+#score, #timer {
+	font-size: 2rem;
+	margin-top: 2rem;
+}
+
+#congrats-screen {
+	height: 100vh;
+	background-color: #673ab7;
+	color: white;
+}
+
+#congrats-screen h1 {
+	font-size: 4rem;
+}
+
+#congrats-screen p {
+	font-size: 2rem;
+	margin-top: 3rem;
+}
+
+#congrats-score, #congrats-time {
+	font-weight: bold;
+}
