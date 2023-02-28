@@ -3,8 +3,9 @@ var time = 0;
 var score = 0;
 // Recuperamos las variables de la pagina anterior
 
-const Player = JSON.parse(localStorage.getItem("PlayerStats"));
-
+var Player = localStorage.getItem("players");
+Player = JSON.parse(Player);
+if(Player == null) Player=[];
 // Variables DOM
 const restartButton = document.getElementById("restart-button");
 const startScreen = document.getElementById("start-screen");
@@ -23,34 +24,57 @@ endButton.addEventListener("click", function () {
   clearInterval(timer);
   score++;
   scoreValue.innerText = score;
-//si viene vacio le damos a fuerzas el valor 0
-if(Player.bestTime === undefined){
-  Player.bestTime = 0;
-}
+  for (var i in Player){
+    var p = JSON.parse(Player[i]);
+    alias = p.alias;
+    better = p.bestTime;
+    //si viene vacio le damos a fuerzas el valor 0
+    if(better === undefined){
+     better = 0;
+    }
+    if(better < time){
+    /*  localStorage.setItem(
+        "players",
+        JSON.stringify({
+          alias: Player.alias,  
+          time: time,
+          score: score,
+          bestTime: time,
+        })
+      );*/
+      var pp = JSON.stringify({
+        alias : p.alias,
+        time: time,
+        score : score,
+        bestTime: time,
+      });
+      Player.push(pp);
+      localStorage.setItem("players",JSON.stringify(Player));
+      }else{
+        /*localStorage.setItem(
+          "players",
+          JSON.stringify({
+            alias: Player.alias,  
+            time: time,
+            score: score,
+            bestTime: best,
+          })
+        );*/
+        var pp = JSON.stringify({
+          alias : p.alias,
+          time: time,
+          score : score,
+          bestTime: better,
+        });
+        Player.push(pp);
+        localStorage.setItem("players",JSON.stringify(Player));
+      }
+  }
+ // var best = parseInt(Player.bestTime);
 //si no viene vacio le damos el valor que tenga en la key bestTime
-var best = parseInt(Player.bestTime);
+
   // Si no hay un mejor tiempo registrado o el tiempo actual es mejor, se actualiza el tiempo
-  if(best < time){
-localStorage.setItem(
-  "PlayerStats",
-  JSON.stringify({
-    alias: Player.alias,  
-    time: time,
-    score: score,
-    bestTime: time,
-  })
-);
-}else{
-  localStorage.setItem(
-    "PlayerStats",
-    JSON.stringify({
-      alias: Player.alias,  
-      time: time,
-      score: score,
-      bestTime: best,
-    })
-  );
-}
+
   // Se muestra la pantalla de felicitación y se actualizan los datos del jugador en el localstorage
   
   window.open("congrats.html");
