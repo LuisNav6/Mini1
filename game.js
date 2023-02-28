@@ -1,10 +1,9 @@
 // Declaramos la variables de new
-let time = 0;
-let bestTime = 0;
-let score = 0;
-
+var time = 0;
+var score = 0;
 // Recuperamos las variables de la pagina anterior
-const Player = JSON.parse(localStorage.getItem("Player"));
+
+const Player = JSON.parse(localStorage.getItem("PlayerStats"));
 
 // Variables DOM
 const restartButton = document.getElementById("restart-button");
@@ -24,22 +23,36 @@ endButton.addEventListener("click", function () {
   clearInterval(timer);
   score++;
   scoreValue.innerText = score;
-
+//si viene vacio le damos a fuerzas el valor 0
+if(Player.bestTime === undefined){
+  Player.bestTime = 0;
+}
+//si no viene vacio le damos el valor que tenga en la key bestTime
+var best = parseInt(Player.bestTime);
   // Si no hay un mejor tiempo registrado o el tiempo actual es mejor, se actualiza el tiempo
-  if (bestTime == 0 || time < bestTime) {
-    bestTime = time;
-  }
-
-  // Se muestra la pantalla de felicitación y se actualizan los datos del jugador en el localstorage
+  if(best < time){
+localStorage.setItem(
+  "PlayerStats",
+  JSON.stringify({
+    alias: Player.alias,  
+    time: time,
+    score: score,
+    bestTime: time,
+  })
+);
+}else{
   localStorage.setItem(
     "PlayerStats",
     JSON.stringify({
       alias: Player.alias,  
       time: time,
       score: score,
-      bestTime: bestTime,
+      bestTime: best,
     })
   );
+}
+  // Se muestra la pantalla de felicitación y se actualizan los datos del jugador en el localstorage
+  
   window.open("congrats.html");
   window.close();
 });
@@ -62,7 +75,7 @@ restartButton.addEventListener("click", function () {
         "CloseStats",
         JSON.stringify({
           score: score,
-          bestTime: bestTime,
+          bestTime: Player.bestTime,
         })
       );
     }
