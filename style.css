@@ -4,6 +4,28 @@ body {
 	padding: 0;
 }
 
+.container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.input-text{
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    color: #333;
+    background-color: #f2f2f2;
+}
+
+.input-text:focus{
+    outline: none;
+    border-color: #0077c2;
+    box-shadow: 0 0 5px #0077c2;
+}
+
 h1{
     padding: 20px 10px;
     margin-top: 0;
@@ -15,49 +37,54 @@ h1{
 }
 
 #game-screen, #congrats-screen{
-    display: none;
+    display: block;
 }
 
 #start-screen {
 	height: 100vh;
-	background-color: #009688;
-	color: white;
+	background-color: #f2f2f2;
+	color: #333;
+}
+#start-button{
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
 
-#start-button, #end-button, #restart-button {
-	font-size: 1.5rem;
-	padding: 1rem;
-	margin-top: 2rem;
-	background-color: #4CAF50;
-	border: none;
-	border-radius: 5px;
-	color: white;
-	cursor: pointer;
+#start-button, #end-button, #restart-button, #quit-button-2, #quit-button {
+    background-color: #0077c2;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 1rem;
+    cursor: pointer;
 }
 
-#start-button:hover, #end-button:hover, #restart-button:hover {
-	background-color: #3e8e41;
+#start-button:hover, #end-button:hover,#restart-button:hover, #quit-button-2:hover, #quit-button:hover {
+	background-color: #005fa8;
 }
 
 #game-screen {
 	height: 100vh;
-	background-color: #00bcd4;
-	color: white;
+	background-color: #333;
+	color: #fff;
 }
 
 #score, #timer {
 	font-size: 2rem;
 	margin-top: 2rem;
+	color: #0077c2;
 }
 
 #congrats-screen {
 	height: 100vh;
-	background-color: #673ab7;
-	color: white;
+	background-color: #333;
+	color: #fff;
 }
 
 #congrats-screen h1 {
 	font-size: 4rem;
+	color: #0077c2;
 }
 
 #congrats-screen p {
@@ -67,4 +94,5 @@ h1{
 
 #congrats-score, #congrats-time {
 	font-weight: bold;
+	color: #0077c2;
 }
