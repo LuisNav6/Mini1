@@ -56,10 +56,7 @@ endButton.addEventListener("click", function () {
 // Evento para reiniciar el juego
 restartButton.addEventListener("click", function () {
   // Se reinician las variables globales y se muestra la pantalla de inicio
-  score = 0;
-  time = 0;
-  scoreValue.innerText = score;
-  timerValue.innerText = 0;
+  location.reload();
 });
 
 // Función para cerrar el juego
@@ -244,7 +241,6 @@ function PutElements(id, id2) {
         event.target.appendChild(animalElement)
         wrong.innerText = ''
         if (score == 6) {
-          score = 0;
           draggableElements.innerHTML = '<p> ¡GANASTE! </p>';
           clearInterval(timer);
           // Recuperamos el usuario actual
@@ -268,6 +264,7 @@ function PutElements(id, id2) {
             player.score = score;
             // Actualizar el arreglo de jugadores en el LocalStorage
             localStorage.setItem("Players", JSON.stringify(players));
+            score = 0;
           }
 
           // Redirigir al jugador a la página de felicitaciones
