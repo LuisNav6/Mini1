@@ -99,6 +99,17 @@ myFont.load().then(function (font) {
 });
 var fondo = new Audio("../recursos/fondo.mp3")
 
+// Canvas posible solucion a la resolucion (Kike)
+/*const canvas = document.querySelector('canvas');
+
+function setCanvasResolution() {
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
+}
+
+window.addEventListener('resize', setCanvasResolution);
+setCanvasResolution(); // set initial canvas resolution*/
+
 
 function iniciar() {
     fondo.loop = true;
