@@ -53,7 +53,7 @@ endButton.addEventListener("click", function () {
   }
 
   // Redirigir al jugador a la página de felicitaciones
-  window.location.href = ("congrats.html");
+  window.location.href = ("../html/congrats.html");
 });
 
 // Evento para reiniciar el juego

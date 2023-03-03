@@ -25,7 +25,7 @@ document.getElementById("start-button").addEventListener('click', function(e) {
 //evento para reedirigir a la tabla
 document.getElementById("tabla-score").addEventListener('click',function(e){
     e.preventDefault();
-    window.location.href = "scores.html";
+    window.location.href = "../html/scores.html";
 });
 
 function addPlayer(player){
@@ -42,7 +42,7 @@ function addPlayer(player){
 
     if (playerExists !== undefined) {
         alert('El usuario ya existe');
-        window.location.href = "login.html";
+        window.location.href = "../html/login.html";
         //return;
     }else{
         // Agregar el nuevo usuario al arreglo
@@ -51,7 +51,7 @@ function addPlayer(player){
 
         // Actualizamos el LocalStorage
         localStorage.setItem("Players",newPlayerJSON);
-        window.location.href = "login.html";
+        window.location.href = "../html/login.html";
     }
 }
 

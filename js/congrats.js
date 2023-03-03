@@ -23,7 +23,7 @@ for (var i in players) {
   }
   //Evento para volver al inicio
   returnbtn.addEventListener("click",function(){
-      window.location.href = "index.html";
+      window.location.href = "../html/index.html";
   });
 
   // Evento para reiniciar el juego
@@ -31,7 +31,7 @@ for (var i in players) {
     // Se reinician las variables globales y se muestra la pantalla de inicio
     score = 0;
     time = 0;
-    window.location.href = "game.html";
+    window.location.href = "../html/game.html";
   });
 
   // Boton para cerrar

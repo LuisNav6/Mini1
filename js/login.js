@@ -18,10 +18,10 @@ document.getElementById("login-button").addEventListener('click', function(e) {
     // Mandamos al jugador actual
     localStorage.setItem("currentPlayer",aliasInput);
     // El usuario existe, lo redirigimos a la página de juego
-    window.location.href = "game.html";
+    window.location.href = "../html/game.html";
 });
 //evento para reedirigir a la tabla
 document.getElementById("tabla-score").addEventListener('click',function(e){
     e.preventDefault();
-    window.location.href = "scores.html";
+    window.location.href = "../html/scores.html";
 });
