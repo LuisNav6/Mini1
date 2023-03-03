@@ -23,8 +23,9 @@ document.getElementById("start-button").addEventListener('click', function(e) {
 });
 
 //evento para reedirigir a la tabla
-document.getElementById("tabla-score").addEventListener('click',function(){
-    window.location.href("scores.html");
+document.getElementById("tabla-score").addEventListener('click',function(e){
+    e.preventDefault();
+    window.location.href = "scores.html";
 });
 
 function addPlayer(player){

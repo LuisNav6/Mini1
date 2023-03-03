@@ -21,6 +21,7 @@ document.getElementById("login-button").addEventListener('click', function(e) {
     window.location.href = "game.html";
 });
 //evento para reedirigir a la tabla
-document.getElementById("tabla-score").addEventListener('click',function(){
-    window.location.href("scores.html");
+document.getElementById("tabla-score").addEventListener('click',function(e){
+    e.preventDefault();
+    window.location.href = "scores.html";
 });
