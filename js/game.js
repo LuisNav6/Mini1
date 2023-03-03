@@ -156,39 +156,39 @@ function PutElements(id, id2) {
 
   switch (id2) {
     case 1:
-      droppableElements.innerHTML += `<div class="names">
-            <p>ardilla</p>
+      droppableElements.innerHTML += ` <div class="names">
+            <p id= "ardilla" >ardilla</p>
        </div>`;
 
       break;
     case 2:
       droppableElements.innerHTML += `<div class="names">
-         <p>buho</p>
+         <p id= "buho">buho</p>
     </div>`;
 
       break;
     case 3:
-      droppableElements.innerHTML += `<div class="names">
-         <p>jabali</p>
+      droppableElements.innerHTML += ` <div class="names">
+         <p id="jabali">jabali</p>
     </div>`;
 
       break;
     case 4:
-      droppableElements.innerHTML += `<div class="names">
-         <p>mapache</p>
+      droppableElements.innerHTML += ` <div class="names">
+         <p id= "mapache">mapache</p>
     </div>`;
 
       break;
     case 5:
-      droppableElements.innerHTML += `<div class="names">
-         <p>oso</p>
+      droppableElements.innerHTML += ` <div class="names">
+         <p id= "oso">oso</p>
     </div>`;
 
 
       break;
     case 6:
-      droppableElements.innerHTML += `<div class="names">
-         <p>zorro</p>
+      droppableElements.innerHTML += ` <div class="names">
+         <p id ="zorro">zorro</p>
     </div>`;
 
       break;
@@ -206,6 +206,7 @@ function PutElements(id, id2) {
   let names = document.querySelectorAll('.names')
   let wrong = document.querySelector('.wrong')
   let score = 0;
+  let NewScore = 0;
   names = [...names]
   names.forEach(nombre => {
     nombre.addEventListener('dragover', event => {
@@ -216,8 +217,9 @@ function PutElements(id, id2) {
       let animalElement = document.querySelector(`#${draggableElementData}`)
       if (event.target.innerText == draggableElementData) {
         score++;
+        NewScore = NewScore + 10;
         // Actualizar score
-        scoreValue.innerText = score;
+        scoreValue.innerText = NewScore;
         // Recuperamos el usuario actual
         const alias = localStorage.getItem("currentPlayer");
 
@@ -231,12 +233,13 @@ function PutElements(id, id2) {
           // Si el jugador ya existe en el arreglo, actualizar su propiedad "bestTime" si corresponde
           const player = players[playerIndex];
           // Actualizar la propiedad "score" del jugador actual
-          player.score = score;
+          player.score = NewScore;
           // Actualizar el arreglo de jugadores en el LocalStorage
           localStorage.setItem("Players", JSON.stringify(players));
         }
+        
         console.log('SI')
-        event.target.innerHTML = ''
+        event.target.innerHTML = `<p id="animalNames"> ${draggableElementData}</p> `;
 
         event.target.appendChild(animalElement)
         wrong.innerText = ''
@@ -261,7 +264,7 @@ function PutElements(id, id2) {
 
             // Actualizar la propiedad "time" del jugador actual
             player.time = time;
-            player.score = score;
+            player.score = NewScore;
             // Actualizar el arreglo de jugadores en el LocalStorage
             localStorage.setItem("Players", JSON.stringify(players));
             score = 0;
@@ -310,6 +313,9 @@ function PutElements(id, id2) {
         }
       } else {
         console.log('No')
+        NewScore = NewScore -5;
+        scoreValue.innerText = NewScore;
+        console.log(NewScore)
         let err = new Audio("../recursos/error.mp3");
         err.volume = 1;
         err.play();
