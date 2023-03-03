@@ -9,14 +9,13 @@ quitButton.addEventListener('click', function (e) {
     hideModal(); // Ocultar el modal
 });
 
-var modalLogin = document.getElementById("modal-login");
 function PlayerSession(){
+    var modalLogin = document.querySelector(".modal-login");
     modalLogin.style.display = 'block';
 }
 
 /* Obtenemos el modal */
 var modal = document.querySelector(".modal-start");
-
 
 /* Obtenemos el botón de cerrar el modal */
 var closeBtn = document.querySelector(".close");
