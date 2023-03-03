@@ -78,11 +78,11 @@ h1{
     background-color: red
 }
 
-#start-button,#restart-button, #login-button{
+#start-button,#restart-button, #login-button, #Return-init{
     width: 200px;
 }
 
-#start-button, #end-button, #restart-button, #login-button{
+#start-button, #end-button, #restart-button, #login-button, #Return-init{
     background-color: #0077c2;
     color: #fff;
     border: none;
@@ -92,7 +92,7 @@ h1{
     cursor: pointer;
 }
 
-#start-button:hover, #end-button:hover,#restart-button:hover , #login-button:hover{
+#start-button:hover, #end-button:hover,#restart-button:hover , #login-button:hover, #Return-init{
 	background-color: #005fa8;
 }
 

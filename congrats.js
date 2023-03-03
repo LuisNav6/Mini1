@@ -10,17 +10,21 @@ for (var i in players) {
   const congratsScore = document.getElementById("congrats-score");
   const congratsTime = document.getElementById("congrats-time");
   const restartButton = document.getElementById("restart-button");
+  const returnbtn = document.getElementById("Return-init");
 
   congratsScore.innerHTML = p.score;
   congratsTime.innerHTML = p.bestTime;
 
-  
   // Función para cerrar el juego
   function closeGame() {
     if (window.confirm("¿Está seguro que desea salir del juego?")) {
       window.close();
     }
   }
+  //Evento para volver al inicio
+  returnbtn.addEventListener("click",function(){
+      window.location.href = "index.html";
+  });
 
   // Evento para reiniciar el juego
   restartButton.addEventListener("click", function () {

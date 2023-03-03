@@ -22,6 +22,11 @@ document.getElementById("start-button").addEventListener('click', function(e) {
 
 });
 
+//evento para reedirigir a la tabla
+document.getElementById("tabla-score").addEventListener('click',function(){
+    window.location.href("scores.html");
+});
+
 function addPlayer(player){
     //Obtenemos el arreglo de usuarios almacenado en LocalStorage
     const playerJSON = localStorage.getItem("Players");
@@ -36,7 +41,8 @@ function addPlayer(player){
 
     if (playerExists !== undefined) {
         alert('El usuario ya existe');
-        return;
+        window.location.href = "login.html";
+        //return;
     }else{
         // Agregar el nuevo usuario al arreglo
         players.push(player);
@@ -47,3 +53,4 @@ function addPlayer(player){
         window.location.href = "login.html";
     }
 }
+
