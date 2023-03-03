@@ -1,30 +1,36 @@
 body {
-	font-family: Arial, sans-serif;
-	margin: 0;
-	padding: 0;
+    font-family: 'LBosque', cursive;
+    background-image: url('../imagenes/fondo-inicio.jpg');
+    background-size: 100%;
 }
 
-.container{
+.container {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    background-color: rgb(0, 64, 43);
 }
 
-.buttons-two{
+.buttons-two {
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 10px;
 }
 
-.buttons-tree{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+#title,
+#subtitle {
+    color: white;
 }
 
-.input-text{
+
+.buttons-tree {
+    flex-direction: column;
+    gap: 10px;
+}
+
+.input-text {
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
@@ -33,38 +39,27 @@ body {
     background-color: #f2f2f2;
 }
 
-.input-text:focus{
+.input-text:focus {
     outline: none;
     border-color: #0077c2;
     box-shadow: 0 0 5px #0077c2;
 }
 
-h1{
+h1 {
     padding: 20px 10px;
     margin-top: 0;
 }
 
-#start-screen, #game-screen, #congrats-screen {
-	text-align: center;
+
+#game-screen,
+#congrats-screen {
     display: block;
 }
 
-#game-screen, #congrats-screen{
-    display: block;
-}
-
-#start-screen {
-	height: 100vh;
-	background-color: #f2f2f2;
-	color: #333;
-}
-#start-button{
-    margin-top: 10px;
-    margin-bottom: 10px;
-}
-
-#quit-button, #quit-button-2{
-    background-color: rgb(226, 85, 85);;
+#quit-button,
+#quit-button-2 {
+    background-color: rgb(226, 85, 85);
+    ;
     color: #fff;
     border: none;
     border-radius: 5px;
@@ -74,15 +69,23 @@ h1{
     width: 200px;
 }
 
-#quit-button:hover, #quit-button-2:hover{
+#quit-button:hover,
+#quit-button-2:hover {
     background-color: red
 }
 
-#start-button,#restart-button, #login-button, #Return-init{
+#start-button,
+#restart-button,
+#login-button,
+#Return-init {
     width: 200px;
 }
 
-#start-button, #end-button, #restart-button, #login-button, #Return-init{
+#start-button,
+#end-button,
+#restart-button,
+#login-button,
+#Return-init {
     background-color: #0077c2;
     color: #fff;
     border: none;
@@ -92,39 +95,118 @@ h1{
     cursor: pointer;
 }
 
-#start-button:hover, #end-button:hover,#restart-button:hover , #login-button:hover, #Return-init{
-	background-color: #005fa8;
+#start-button:hover,
+#end-button:hover,
+#restart-button:hover,
+#login-button:hover,
+#Return-init {
+    background-color: #005fa8;
 }
 
-#game-screen {
-	height: 100vh;
-	background-color: #333;
-	color: #fff;
-}
-
-#score, #timer {
-	font-size: 2rem;
-	margin-top: 2rem;
-	color: #0077c2;
+#score,
+#timer {
+    font-size: 2rem;
+    margin-top: 2rem;
+    color: #0077c2;
 }
 
 #congrats-screen {
-	height: 100vh;
-	background-color: #333;
-	color: #fff;
+    height: 100vh;
+    background-color: #333;
+    color: #fff;
 }
 
 #congrats-screen h1 {
-	font-size: 4rem;
-	color: #0077c2;
+    font-size: 4rem;
+    color: #0077c2;
 }
 
 #congrats-screen p {
-	font-size: 2rem;
-	margin-top: 3rem;
+    font-size: 2rem;
+    margin-top: 3rem;
 }
 
-#congrats-score, #congrats-time {
-	font-weight: bold;
-	color: #0077c2;
+#congrats-score,
+#congrats-time {
+    font-weight: bold;
+    color: #0077c2;
+}
+
+/* Modales */
+/* Estilos para el botón que abre el modal */
+.modal-login {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal-start {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal-start .container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 20%;
+    max-height: 80%;
+
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+}
+
+
+
+/* Estilos para los botones del modal */
+.modal-start .buttons-tree {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.modal-start .buttons-tree button {
+    background-color: rgb(8, 97, 16);
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 1rem;
+    cursor: pointer;
+    width: 200px;
+}
+
+.buttons-tree button:hover {
+    background-color: rgb(13, 126, 23);
+}
+
+/* Estilos para el botón de cerrar el modal */
+.modal-start .close {
+    color: #aaaaaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.modal-start .close:hover,
+.modal-start .close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
 }

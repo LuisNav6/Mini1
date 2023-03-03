@@ -1,18 +1,76 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-	<title>Juego</title>
-	<link rel="stylesheet" type="text/css" href="style.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/styles-game.css">
+    <title>Juego</title>
 </head>
 <body>
-	<div id="game-screen">
-		<h1>Juego en progreso</h1>
-		<p id="score">Puntos: <span id="score-value">0</span></p>
-		<p id="timer">Tiempo: <span id="timer-value">0</span></p>
-		<button id="end-button">Terminar</button>
-        <button id="restart-button">Reiniciar</button>
-        <button id="quit-button">Salir</button>
-	</div>
-	<script src="game.js"></script>
+    <div style="text-align: left;">
+        <table>
+            <tr  style="height:10px;">
+                <td style="width:100px;">
+                        <button id="play"><img id="audio" src="../imagenes/play.svg" alt=""></button>
+                        <button id="paused"><img id="audio" src="../imagenes/paused.svg" alt=""></button>
+                </td>
+                <td  style="width:950px;">
+                    <h2>Arrastra el animal a su nombre</h2>
+                </td>
+                <td style="width:150px; text-align:center; font-weight: bold; font-size: 20px;">
+                   <p id="timer">Tiempo: <span id="timer-value">0</span></p>
+                </td>
+                <td style="width:150px; text-align:center; font-weight: bold; font-size: 20px;">
+                    <p id="score">Puntaje: <span id="score-value"> 0 </span></p>
+                </td>
+                <td>
+                    <button id="end-button">Terminar</button>
+                </td>
+                <td>
+                    <button id="restart-button">Reiniciar</button>
+                </td>
+                <td>
+                    <button id="quit-button">Salir</button>
+                </td>
+            </tr>
+            <tr>
+               <td>
+              
+               </td>
+            </tr>
+            <tr>
+                
+               
+            </tr>
+        </table>
+        
+       
+    </div>
+    <main class="main-container">
+       <table>
+         <tr>
+            <td colspan="2">
+                <div class="draggable-elements"> 
+                  
+
+                </div>
+            </td>
+            <td>
+                <div class="droppable-elements">
+        
+                </div>
+      
+            </td>
+
+         </tr>
+       </table>
+        
+          
+        </main>
+        <p class="wrong"></p>
+
+    
+    <script src="main.js"></script>
 </body>
 </html>
