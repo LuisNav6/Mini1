@@ -1,9 +1,15 @@
 
+// Recuperamos el usuario actual
+const alias = localStorage.getItem("currentPlayer");
+
 // Obtener el arreglo de jugadores almacenado en el LocalStorage
 let players = JSON.parse(localStorage.getItem("Players")) || [];
 
-for (var i in players) {
-  var p = players[i];
+// Buscar al jugador actual en el arreglo
+const playerIndex = players.findIndex(player => player.alias === alias);
+
+if (playerIndex !== -1) {
+  var p = players[playerIndex];
 
   // Variables DOM
   const congratsScreen = document.getElementById("congrats-screen");
@@ -23,7 +29,7 @@ for (var i in players) {
   }
   //Evento para volver al inicio
   returnbtn.addEventListener("click",function(){
-      window.location.href = "../html/index.html";
+      window.location.href = "../index.html";
   });
 
   // Evento para reiniciar el juego

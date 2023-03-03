@@ -1,7 +1,7 @@
 document.getElementById("login-button").addEventListener('click', function(e) {
     e.preventDefault();
 
-    const aliasInput = document.getElementById("name").value;
+    const aliasInput = document.getElementById("name-login").value;
     const playerJSON = localStorage.getItem("Players");
     let players = [];
 

@@ -1,6 +1,6 @@
 // Declaramos la variables de new
 var time = 0;
-var score = 0;
+//var score = 0;
 var bestTime = 0;
 // Recuperamos las variables de la pagina anterior
 const playerJSON = localStorage.getItem("Players");
@@ -27,8 +27,6 @@ let timer = setInterval(function () {
 // Evento para terminar el juego
 endButton.addEventListener("click", function () {
   clearInterval(timer);
-  score++;
-  scoreValue.innerText = score;
   // Recuperamos el usuario actual
   const alias = localStorage.getItem("currentPlayer");
 
@@ -47,7 +45,6 @@ endButton.addEventListener("click", function () {
 
     // Actualizar la propiedad "time" del jugador actual
     player.time = time;
-    player.score = score;
     // Actualizar el arreglo de jugadores en el LocalStorage
     localStorage.setItem("Players", JSON.stringify(players));
   }
@@ -68,7 +65,7 @@ restartButton.addEventListener("click", function () {
 // Función para cerrar el juego
 quitButton.addEventListener("click", function () {
   if (confirm("¿Estás seguro de que deseas cerrar el juego?")) {
-    window.close();
+    window.location.href = "../index.html";
   }
 });
 
@@ -211,7 +208,7 @@ function PutElements(id, id2) {
 
   let names = document.querySelectorAll('.names')
   let wrong = document.querySelector('.wrong')
-  let point = 0;
+  let score = 0;
   names = [...names]
   names.forEach(nombre => {
     nombre.addEventListener('dragover', event => {
@@ -221,16 +218,60 @@ function PutElements(id, id2) {
       const draggableElementData = event.dataTransfer.getData('text')
       let animalElement = document.querySelector(`#${draggableElementData}`)
       if (event.target.innerText == draggableElementData) {
+        score++;
+        // Actualizar score
+        scoreValue.innerText = score;
+        // Recuperamos el usuario actual
+        const alias = localStorage.getItem("currentPlayer");
 
+        // Obtener el arreglo de jugadores almacenado en el LocalStorage
+        let players = JSON.parse(localStorage.getItem("Players")) || [];
+
+        // Buscar al jugador actual en el arreglo
+        const playerIndex = players.findIndex(player => player.alias === alias);
+
+        if (playerIndex !== -1) {
+          // Si el jugador ya existe en el arreglo, actualizar su propiedad "bestTime" si corresponde
+          const player = players[playerIndex];
+          // Actualizar la propiedad "score" del jugador actual
+          player.score = score;
+          // Actualizar el arreglo de jugadores en el LocalStorage
+          localStorage.setItem("Players", JSON.stringify(players));
+        }
         console.log('SI')
-        point++;
         event.target.innerHTML = ''
 
         event.target.appendChild(animalElement)
         wrong.innerText = ''
-        if (point == 6) {
+        if (score == 6) {
+          score = 0;
           draggableElements.innerHTML = '<p> ¡GANASTE! </p>';
-          
+          clearInterval(timer);
+          // Recuperamos el usuario actual
+          const alias = localStorage.getItem("currentPlayer");
+
+          // Obtener el arreglo de jugadores almacenado en el LocalStorage
+          let players = JSON.parse(localStorage.getItem("Players")) || [];
+
+          // Buscar al jugador actual en el arreglo
+          const playerIndex = players.findIndex(player => player.alias === alias);
+
+          if (playerIndex !== -1) {
+            // Si el jugador ya existe en el arreglo, actualizar su propiedad "bestTime" si corresponde
+            const player = players[playerIndex];
+            if (player.bestTime === undefined || player.bestTime < time || player.bestTime == 0) {
+              player.bestTime = time;
+            }
+
+            // Actualizar la propiedad "time" del jugador actual
+            player.time = time;
+            player.score = score;
+            // Actualizar el arreglo de jugadores en el LocalStorage
+            localStorage.setItem("Players", JSON.stringify(players));
+          }
+
+          // Redirigir al jugador a la página de felicitaciones
+          window.location.href = ("../html/congrats.html");
         }
         if (draggableElementData == 'jabali') {
 

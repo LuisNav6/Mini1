@@ -48,7 +48,6 @@ document.getElementById("start-button").addEventListener('click', function (e) {
     } else {
         // Agregamos el player al arreglo
         addPlayer(player);
-        hideModal();
     }
 
 });
@@ -82,7 +81,8 @@ function addPlayer(player) {
 
         // Actualizamos el LocalStorage
         localStorage.setItem("Players", newPlayerJSON);
-        modalLogin.style.display = 'block';
+        alert("Jugador Agregado");
+        hideModal();
     }
 }
 
