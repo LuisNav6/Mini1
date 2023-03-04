@@ -36,7 +36,7 @@ div{
 }
 
 #play,#paused{
-    width: 15%;
+    width: 3%;
     background-color: #b4f2a7;
 }
 #play:hover, #paused:hover{
