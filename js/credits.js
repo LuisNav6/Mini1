@@ -21,7 +21,7 @@ function iniciar(){
       ctx.textAlign = 'center';
       ctx.fillText("PROGRAMMING AND DESIGN",750,60);
       ctx.font = '30px myFont';
-      ctx.fillStyle = "white";
+      ctx.fillStyle = "chocolate";
       ctx.textAlign = 'center';
       ctx.fillText("Salvador Gaytan Ponce",750,100);
       ctx.fillText("Luis Humberto Navarrete Balandran",750,150);
