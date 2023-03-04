@@ -31,7 +31,7 @@ if (playerIndex !== -1) {
   }
   //Evento para volver al inicio
   returnbtn.addEventListener("click",function(){
-      window.location.href = "../index.html";
+      window.location.href = "../presentacion.html";
   });
 
   // Evento para reiniciar el juego
