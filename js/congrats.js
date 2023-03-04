@@ -17,9 +17,11 @@ if (playerIndex !== -1) {
   const congratsTime = document.getElementById("congrats-time");
   const restartButton = document.getElementById("restart-button");
   const returnbtn = document.getElementById("Return-init");
+  const alias = document.getElementById("alias");
 
   congratsScore.innerHTML = p.score;
   congratsTime.innerHTML = p.bestTime;
+  alias.innerHTML = p.alias;
 
   // Función para cerrar el juego
   function closeGame() {
@@ -39,8 +41,4 @@ if (playerIndex !== -1) {
     time = 0;
     window.location.href = "../html/game.html";
   });
-
-  // Boton para cerrar
-  const quitButton2 = document.getElementById("quit-button-2");
-  quitButton2.addEventListener("click", closeGame);
 }

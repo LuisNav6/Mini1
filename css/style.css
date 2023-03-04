@@ -82,10 +82,23 @@ h1 {
 #Return-init {
     width: 200px;
 }
+#restart-button{
+    background-color: rgb(12, 131, 12);
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 1rem;
+    cursor: pointer;   
+}
+
+#restart-button:hover{
+    background-color: rgb(16, 173, 16);
+}
+
 
 #start-button,
 #end-button,
-#restart-button,
 #login-button,
 #Return-init {
     background-color: #0077c2;
@@ -99,7 +112,6 @@ h1 {
 
 #start-button:hover,
 #end-button:hover,
-#restart-button:hover,
 #login-button:hover,
 #Return-init {
     background-color: #005fa8;
@@ -113,25 +125,46 @@ h1 {
 }
 
 #congrats-screen {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
     height: 100vh;
-    background-color: #333;
-    color: #fff;
+    background-image: url("../imagenes/fondo-inicio.jpg");
+    color: chocolate;
+    font-family: 'LBosque', cursive;
+}
+
+.congrastImg{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+#logo{
+    width: 150px;
+    height: 150px;
+    float: right;
+    margin-left: 10px;
 }
 
 #congrats-screen h1 {
     font-size: 4rem;
-    color: #0077c2;
+    color: chocolate;
 }
 
 #congrats-screen p {
     font-size: 2rem;
     margin-top: 3rem;
+    font-weight: bold;
 }
 
 #congrats-score,
 #congrats-time {
     font-weight: bold;
-    color: #0077c2;
+    color: white;
 }
 
 /* Modales */
@@ -249,4 +282,8 @@ h1 {
     color: #000;
     text-decoration: none;
     cursor: pointer;
+}
+@font-face {
+    font-family: 'LBosque';
+    src: url('../recursos/LetraBosque.ttf');
 }
