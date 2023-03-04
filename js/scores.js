@@ -34,5 +34,5 @@ window.onload = function(){
 
 document.getElementById("salir").addEventListener('click' , function(e){
     e.preventDefault();
-    window.location.href = "../index.html";
+    window.location.href = "../principal.html";
 });
