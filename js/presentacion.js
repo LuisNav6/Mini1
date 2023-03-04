@@ -1,4 +1,4 @@
-var fondo = new Audio("juego/recursos/fondo.mp3")
+var fondo = new Audio("recursos/fondo.mp3")
 
 
 
