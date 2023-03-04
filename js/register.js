@@ -72,7 +72,7 @@ function addPlayer(player) {
 
     if (playerExists !== undefined) {
         alert('El usuario ya existe');
-        window.location.href = "../index.html";
+        window.location.href = "../principal.html";
         //return;
     } else {
         // Agregar el nuevo usuario al arreglo
