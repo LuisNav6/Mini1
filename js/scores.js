@@ -7,7 +7,7 @@ if(players==null) players=[];
 
 
 players.sort(function(a,b){
-    return b.bestTime - a.bestTime;
+    return a.bestTime - b.bestTime;
 });
 function lista(){
 
