@@ -8,7 +8,7 @@ myFont.load().then(function (font) {
 
 document.getElementById("regresar").addEventListener('click', function(e){
     e.preventDefault();
-    window.location.href = "../presentacion.html"
+    window.location.href = "../principal.html"
 });
 
 function iniciar(){
