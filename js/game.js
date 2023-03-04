@@ -58,7 +58,7 @@ endButton.addEventListener("click", function () {
 // Función para cerrar el juego
 quitButton.addEventListener("click", function () {
   if (confirm("¿Estás seguro de que deseas cerrar el juego?")) {
-    window.location.href = "../index.html";
+    window.location.href = "../principal.html";
   }
 });
 
