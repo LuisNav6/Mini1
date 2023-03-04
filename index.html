@@ -32,29 +32,20 @@
 </head>
 
 <body>
-    <canvas id="play" width="65" height="60" onclick="playMusic()">
-    </canvas>
-    <canvas id="pause" width="65" height="60" onclick="pauseMusic()">
-    </canvas>
-    <canvas id="canvas" width="1450" height="150">
-
-    </canvas>
-        <canvas id="inicio" width="1450" height="100" onclick="RegisterStart()">
-    </canvas>
-
-    <button style="display: flex; justify-content: center; align-items: center; margin: auto;" onclick="PlayerSession()">
-        Iniciar Sesion
-    </button>
-
-    <canvas id="" width="1450" height="100" onclick="location.href=''">
-    </canvas>
-    <canvas id="" width="1450" height="100" onclick="location.href=''">
-    </canvas>
-    <canvas id="creditos" width="1450" height="100" onclick="location.href='html/creditos.html'">
-    </canvas>
-    <div>
-        <a href=""></a>
+    <div class="sound">
+        <img id="imgSound" src="imagenes/play.png" onclick="playMusic()">
+        <img id="imgSound" src="imagenes/paused.png" onclick="pauseMusic()">
     </div>
+    
+    <div class="container-main">
+        <h1 id="title-main">Animales del Bosque</h1>
+        <button id="btn-main" onclick="RegisterStart()">Registrar</button>
+        <button id="btn-main" onclick="PlayerSession()">Jugar</button>
+        <button id="btn-main" class="records">Records</button>
+        <button id="btn-main" class="btn-credits"> Créditos </button>
+    </div>
+
+    <!-- Modales -->
     <div class="modal-start">
         <form class="container">
             <h1 id="title">Registro</h1>

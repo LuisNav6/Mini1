@@ -3,7 +3,6 @@ body {
     background-image: url('../imagenes/fondo-inicio.jpg');
     background-size: 100%;
     width: 100%;
-    border: 5px solid white;
 }
 
 .container {
@@ -82,17 +81,18 @@ h1 {
 #Return-init {
     width: 200px;
 }
-#restart-button{
+
+#restart-button {
     background-color: rgb(12, 131, 12);
     color: #fff;
     border: none;
     border-radius: 5px;
     padding: 10px 20px;
     font-size: 1rem;
-    cursor: pointer;   
+    cursor: pointer;
 }
 
-#restart-button:hover{
+#restart-button:hover {
     background-color: rgb(16, 173, 16);
 }
 
@@ -136,14 +136,14 @@ h1 {
     font-family: 'LBosque', cursive;
 }
 
-.congrastImg{
+.congrastImg {
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
 }
 
-#logo{
+#logo {
     width: 150px;
     height: 150px;
     float: right;
@@ -254,7 +254,7 @@ h1 {
     margin-top: 20px;
 }
 
-#tabla-score{
+#tabla-score {
     background-color: rgb(8, 97, 16);
     color: #fff;
     border: none;
@@ -265,7 +265,7 @@ h1 {
     width: 200px;
 }
 
-#tabla-score:hover{
+#tabla-score:hover {
     background-color: rgb(13, 126, 23);
 }
 
@@ -283,7 +283,85 @@ h1 {
     text-decoration: none;
     cursor: pointer;
 }
+
 @font-face {
     font-family: 'LBosque';
     src: url('../recursos/LetraBosque.ttf');
+}
+
+/* Index */
+
+.container-main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    gap: 10px;
+}
+
+#btn-main , #regresar{
+    padding: 20px;
+    font-family: 'LBosque';
+    font-weight: bold;
+    font-size: 24px;
+    background-color: chocolate;
+    color: #F2FFF2;
+    border: none;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    cursor: pointer;
+    width: 200px;
+    text-align: center;
+    box-shadow: 5px 5px #8B4513;
+}
+
+#btn-main:hover , #regresar:hover{
+    background-color: #8B4513;
+    color: #F2FFF2;
+    box-shadow: none;
+}
+
+#btn-main:focus {
+    outline: none;
+}
+
+#imgSound {
+    cursor: pointer;
+    width: 2%;
+    height: 2%;
+    background-color: rgb(22, 53, 5);
+    border-radius: 5px;
+    transition: transform 0.3s ease-out;
+}
+
+#imgSound:hover {
+    background-color: rgb(43, 105, 9);
+    transform: scale(1.2);
+}
+
+#title-main {
+    font-size: 72px;
+    font-family: 'LBosque';
+    font-weight: bold;
+    color: chocolate;
+    animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+    0% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-20px);
+    }
+    100% {
+      transform: translateY(0);
+    }
+}
+
+.container-regresar{
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }

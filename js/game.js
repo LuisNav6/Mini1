@@ -39,7 +39,7 @@ endButton.addEventListener("click", function () {
   if (playerIndex !== -1) {
     // Si el jugador ya existe en el arreglo, actualizar su propiedad "bestTime" si corresponde
     const player = players[playerIndex];
-    if (player.bestTime === undefined || player.bestTime < time || player.bestTime == 0) {
+    if (player.bestTime === undefined || player.bestTime > time || player.bestTime == 0) {
       player.bestTime = time;
     }
 

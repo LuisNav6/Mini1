@@ -31,3 +31,8 @@ function lista(){
 window.onload = function(){
     lista();
 }
+
+document.getElementById("salir").addEventListener('click' , function(e){
+    e.preventDefault();
+    window.location.href = "../index.html";
+});

@@ -5,6 +5,12 @@ myFont.load().then(function (font) {
     document.fonts.add(font);
     console.log('Font loaded');
 });
+
+document.getElementById("regresar").addEventListener('click', function(e){
+    e.preventDefault();
+    window.location.href = "../index.html"
+});
+
 function iniciar(){
    
       const canvas = document.getElementById("creditos");
